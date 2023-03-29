@@ -12,6 +12,7 @@
 #include "string.h"
 #include "stdlib.h"
 #include "Arial14.h"
+#include "Arial_Black_16_ISO_8859_1.h"
 
 
 //display screen (and subscreen) sizing
@@ -27,11 +28,20 @@
 #define GRAPHICS_OR        3
 #define GRAPHICS_NOR       4
 
+// Font Indices
+#define FONT_LENGTH             0
+#define FONT_FIXED_WIDTH        2
+#define FONT_HEIGHT             3
+#define FONT_FIRST_CHAR         4
+#define FONT_CHAR_COUNT         5
+#define FONT_WIDTH_TABLE        6
+
+
 #define true       1
 #define false      0
 
 
-
+void setFont(const uint8_t *font_display);
 void clearScreen(uint8_t bNormal);
 void DMD(uint8_t panelsWide, uint8_t panelsHigh, GPIO_TypeDef* OE_PORT, uint16_t OE_PIN, GPIO_TypeDef* SCLK_PORT, uint16_t SCLK_PIN,
 GPIO_TypeDef* A_PORT, uint16_t A_PIN, GPIO_TypeDef* B_PORT, uint16_t B_PIN);

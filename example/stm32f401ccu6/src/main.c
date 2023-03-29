@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "dmd.h"
+#include "stdio.h"
 
 
 /* USER CODE END Includes */
@@ -110,12 +111,17 @@ int main(void)
   //Write_Font_To_Flash();
 
   HAL_TIM_Base_Start_IT(&htim3);
+  setFont(Arial_Black_16_ISO_8859_1);
   DMD(1,1,OE_P10_GPIO_Port, OE_P10_Pin, SCLK_P10_GPIO_Port, SCLK_P10_Pin,
 		  A_P10_GPIO_Port, A_P10_Pin, B_P10_GPIO_Port, B_P10_Pin);
   uint32_t start = HAL_GetTick();
   uint32_t timer = start;
-  const char *MSG = "Jacomelli Confeccoes";
+  //float teste = 1.1;
+  //char string_teste[20];
+  //sprintf(string_teste, "f%", teste);
+  const char *MSG = "Boas Festas!";
   drawMarquee(MSG,strlen(MSG),(32*DISPLAYS_ACROSS)-1,0);
+
 
   /* USER CODE END 2 */
 
